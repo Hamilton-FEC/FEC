@@ -3,6 +3,7 @@ import AnswerEntryPhotos from './AnswerEntryPhotos.jsx';
 import ReportedAnswerButton from './ReportedAnswerButton.jsx';
 import HelpfulAnswer from './HelpfulAnswer.jsx';
 
+
 const AnswerListEntry = function ({ answer, date, reportAnswer, state, updateAnswerHelpfulness }) {
   return (
     <div>

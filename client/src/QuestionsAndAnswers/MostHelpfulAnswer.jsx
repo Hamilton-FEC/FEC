@@ -1,6 +1,7 @@
 import React from 'react';
 import ReportedAnswerButton from './ReportedAnswerButton.jsx';
 import HelpfulAnswer from './HelpfulAnswer.jsx';
+import AnswerEntryPhotos from './AnswerEntryPhotos.jsx';
 
 const MostHelpfulAnswer = function ({ answer, date, reportAnswer, state, updateAnswerHelpfulness={updateAnswerHelpfulness}}) {
   return (
@@ -15,6 +16,7 @@ const MostHelpfulAnswer = function ({ answer, date, reportAnswer, state, updateA
               <ReportedAnswerButton answer={answer} reportAnswer={reportAnswer} state={state}/>
             </span>
           </div>
+          <AnswerEntryPhotos photos={answer.photos}/>
       </div>
 
   );

@@ -268,6 +268,7 @@ const answerDataToSend = {
       AnswerModalEmailInput: '',
       AnswerModalNameInput: '',
       AnswerModalTextAreaInput: '',
+      answerModalPhotos: [],
       showAnswerModal: false,
     });
   }

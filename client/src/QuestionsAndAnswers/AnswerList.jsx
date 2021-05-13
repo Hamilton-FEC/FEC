@@ -33,7 +33,6 @@ function AnswerList({
   let i = 1;
 
   const renderHelper = orderedAnswers.map((answer) => {
-
     if (i > 0) {
       i--;
       return (
