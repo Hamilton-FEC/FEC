@@ -144,7 +144,12 @@ class QuestionsAndAnswers extends React.Component {
   addAnswerPhotos(e) {
     const photos = this.state.answerModalPhotos;
 
-    const file = new File([e.target.files[0]], e.target.files[0].name, {type: e.target.files[0].type});
+    const file = new File(
+      [e.target.files[0]],
+      e.target.files[0].name,
+      {type: e.target.files[0].type,
+      });
+
     var config = {
       method: 'post',
       url: '/api/images',
