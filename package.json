@@ -19,6 +19,14 @@
   },
   "homepage": "https://github.com/wolfshirts/FEC#readme",
   "devDependencies": {
+   
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/node": "^7.13.0",
@@ -50,12 +58,5 @@
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
-    "axios": "^0.21.1",
-    "body-parser": "^1.19.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
   }
 }
