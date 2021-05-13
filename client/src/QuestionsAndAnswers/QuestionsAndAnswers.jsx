@@ -71,7 +71,7 @@ class QuestionsAndAnswers extends React.Component {
     axios.post(`api/qa/questions/${questionIdOfQuestionToBeAnswered}/answers`, answerData)
     .then((response) => {
       this.getAnswers();
-      this.prolpse.getQuestions();
+      this.props.getQuestions();
       console.log(JSON.stringify(response.data));
     })
     .catch((error) => {
