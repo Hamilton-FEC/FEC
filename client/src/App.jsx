@@ -25,6 +25,12 @@ class App extends React.Component {
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }
 
+
+  componentDidMount() {
+    this.getAllProducts();
+    this.getProduct();
+    this.getMetaInformation();
+  }
   componentDidMount() {
     this.getAllProducts();
     this.getProduct();

@@ -88,12 +88,14 @@ const AnswerModal = function ({
 
         <input
           name="AnswerModalEmailInput"
-          placeholder="Example: jack@email.com"
-          className="qa-answer-modal-griditem9"
           value={state.AnswerModalEmailInput || ''}
           onChange={onChange}
-          maxLength="60"
           type="text"
+
+
+          placeholder="Example: jack@email.com"
+          className="qa-answer-modal-griditem9"
+          maxLength="60"
         />
         <div className="qa-answer-modal-griditem10">
           For authentication reasons, you will not be emailed

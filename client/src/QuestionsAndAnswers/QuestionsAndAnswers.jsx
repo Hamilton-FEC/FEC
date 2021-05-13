@@ -71,7 +71,7 @@ class QuestionsAndAnswers extends React.Component {
     axios.post(`api/qa/questions/${questionIdOfQuestionToBeAnswered}/answers`, answerData)
     .then((response) => {
       this.getAnswers();
-      this.prolpse.getQuestions();
+      this.props.getQuestions();
       console.log(JSON.stringify(response.data));
     })
     .catch((error) => {
@@ -144,7 +144,12 @@ class QuestionsAndAnswers extends React.Component {
   addAnswerPhotos(e) {
     const photos = this.state.answerModalPhotos;
 
-    const file = new File([e.target.files[0]], e.target.files[0].name, {type: e.target.files[0].type});
+    const file = new File(
+      [e.target.files[0]],
+      e.target.files[0].name,
+      {type: e.target.files[0].type,
+      });
+
     var config = {
       method: 'post',
       url: '/api/images',

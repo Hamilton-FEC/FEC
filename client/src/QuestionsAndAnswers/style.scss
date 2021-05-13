@@ -340,7 +340,6 @@ mark {
 //email label
 .qa-question-modal-griditem8 {
   position: relative;
-  top: 68%;
   grid-column-start: 7;
   grid-column-end: 11;
   grid-row-start: 6;
@@ -487,7 +486,6 @@ button.qa-question-modal-griditem12:hover {
 //Label for TextArea
 .qa-answer-modal-griditem3 {
   position: relative;
-  top: 50%;
   grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 4;
@@ -509,7 +507,6 @@ button.qa-question-modal-griditem12:hover {
 //Label for Nickname
 .qa-answer-modal-griditem5 {
   position: relative;
-  top: 50%;
   grid-column-start: 8;
   grid-column-end: 11;
   grid-row-start: 2;
@@ -537,11 +534,10 @@ button.qa-question-modal-griditem12:hover {
 }
 .qa-answer-modal-griditem8 {
   position: relative;
-  top: 75%;
   grid-column-start: 8;
   grid-column-end: 10;
-  grid-row-start: 7;
-  grid-row-end: 8;
+  grid-row-start: 8;
+  grid-row-end: 9;
 }
 .qa-answer-modal-griditem8-alert {
   grid-column-start: 8;

@@ -20,9 +20,6 @@ app.post('/api/images', (req, res)=>{
   // Axios get the url.
   // then write the result of the get request.
 
-
-
-
   let id = req.headers.filename + (Math.floor(Math.random() * 1000)) + (Math.floor(Math.random() * 4000)) + (Math.floor(Math.random() * 5000)) + (Math.floor(Math.random() * 6000)) + '.' + (req.headers.filetype.split('/')[1]);
   // headers filename
   fs.writeFile(path.join(__dirname, `../public/images/${id}`), req.body, (err) => {
