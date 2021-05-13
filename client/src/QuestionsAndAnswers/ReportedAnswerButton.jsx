@@ -7,7 +7,7 @@ const ReportedAnswerButton = function ({ answer, reportAnswer, state }) {
         href="#"
         onClick={(e) => {
           e.preventDefault();
-          if (answer.answerer_name === 'Tree') {
+          if (answer.answerer_name) {
             console.log('Reporting is disabled for these answers.')
           } else {
             reportAnswer(answer.id);
