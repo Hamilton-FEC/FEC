@@ -7,7 +7,12 @@ const ReportedAnswerButton = function ({ answer, reportAnswer, state }) {
         href="#"
         onClick={(e) => {
           e.preventDefault();
-          reportAnswer(answer.id);
+          let keep = [1720070, 1720071, 1720069, 1720068, 1720066, 1720067]
+          if (keep.includes(answer.id)) {
+            console.log('Do not remove')
+          } else {
+            reportAnswer(answer.id);
+          }
         }}
       >
         Report
