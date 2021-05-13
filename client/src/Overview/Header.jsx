@@ -41,7 +41,7 @@ class Header extends React.Component {
           <span>
             {/* <MdKeyboardArrowLeft id="main-header-left" onClick={this.handleArrowClick} /> */}
 
-            {show && <span id="main-sale-text">FREE SHIPPING & 60 DAY FREE RETURNS!</span>}
+            {show && <span id="main-sale-text">FREE SHIPPING FOR 60 DAYS!</span>}
 
             {!show && <span id="main-sale-text">HURRY BEFORE SALE ENDS!</span>}
             {/* <MdKeyboardArrowRight id="main-header-right"onClick={this.handleArrowClick} /> */}
