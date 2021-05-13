@@ -1,9 +1,10 @@
 const express = require('express');
 const axios = require('axios');
-const { apiKey } = require('../config.js');
+//const { apiKey } = require('../config.js');
+const apiKey = process.env.SECRET;
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const apiUrl = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/';
 const path = require('path');
 const fs = require('fs');
