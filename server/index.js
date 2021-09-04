@@ -1,9 +1,13 @@
 const express = require('express');
 const axios = require('axios');
-const { apiKey } = require('../config.js');
+// If running locally, use this or SECRET="SECRET" npm start
+// const { apiKey } = require('../config.js');
+
+// Use env secret for heroku deploy
+const apiKey = process.env.SECRET
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const apiUrl = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/';
 const path = require('path');
 const fs = require('fs');
