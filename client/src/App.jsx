@@ -8,7 +8,7 @@ import RelatedItemsAndComparison from './RelatedItemsAndComparison/RelatedItemsA
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); //comment
     this.darkMode = false;
     this.state = {
       allProducts: [],
