@@ -12,7 +12,7 @@ class App extends React.Component {
     this.darkMode = false;
     this.state = {
       allProducts: [],
-      selectedProduct: null,
+      selectedProduct: {},
       questions: {},
       selectedStyle: null,
       darkMode: false,
@@ -23,15 +23,15 @@ class App extends React.Component {
     this.changeSelectedStyle = this.changeSelectedStyle.bind(this);
     this.getMetaInformation = this.getMetaInformation.bind(this);
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
-    this.getInitialProductId = this.getInitialProductId.bind(this);
+    this.getInitialProduct = this.getInitialProduct.bind(this);
   }
 
   componentDidMount() {
-    // this.getInitialProduct();
+    this.getInitialProduct();
     this.getAllProducts();
     this.getProduct();
     this.getMetaInformation();
-    console.log(this.state.selectedProduct)
+    console.log('SelectedProduct:', this.state.selectedProduct)
   }
 
   getAllProducts() {
@@ -48,11 +48,11 @@ class App extends React.Component {
       });
   }
 
-  getInitialProductId() {
+  getInitialProduct() {
     axios.get('api/products?count=1')
     .then((response) => {
       this.setState(
-        {selectedProduct: response.data[0].id}
+        {selectedProduct: response.data[0]}
       )
     })
     .catch(function (error) {
@@ -61,15 +61,8 @@ class App extends React.Component {
   }
 
   getMetaInformation() {
-    let product;
-    if (!this.state.selectedProduct) {
-      product = 40344;
-    } else {
-      product = this.state.selectedProduct;
-    }
-
     axios
-      .get(`/api/reviews/meta?product_id=${product}`)
+      .get(`/api/reviews/meta?product_id=${this.state.selectedProduct.id}`)
       .then((data) => {
         let totalRatingScore = 0;
         let totalNumberOfRatings = 0;
@@ -87,7 +80,7 @@ class App extends React.Component {
       });
   }
 
-  getProduct(productID = 40344) {
+  getProduct(productID = this.state.selectedProduct.id) {
     axios
       .get(`api/products/${productID}`)
       .then((product) => this.setState({ selectedProduct: product.data }))
