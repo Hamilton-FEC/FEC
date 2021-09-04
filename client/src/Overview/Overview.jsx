@@ -28,7 +28,7 @@ class Overview extends React.Component {
 
   componentDidMount() {
     this.getProductStyles();
-    console.log(this.props.selectedProductId);
+    console.log('Selected Product:', this.props.selectedProductId);
   }
 
   componentDidUpdate(prevsProp) {

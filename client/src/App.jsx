@@ -23,18 +23,15 @@ class App extends React.Component {
     this.changeSelectedStyle = this.changeSelectedStyle.bind(this);
     this.getMetaInformation = this.getMetaInformation.bind(this);
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
+    this.getInitialProductId = this.getInitialProductId.bind(this);
   }
 
-
   componentDidMount() {
+    // this.getInitialProduct();
     this.getAllProducts();
     this.getProduct();
     this.getMetaInformation();
-  }
-  componentDidMount() {
-    this.getAllProducts();
-    this.getProduct();
-    this.getMetaInformation();
+    console.log(this.state.selectedProduct)
   }
 
   getAllProducts() {
@@ -51,10 +48,22 @@ class App extends React.Component {
       });
   }
 
+  getInitialProductId() {
+    axios.get('api/products?count=1')
+    .then((response) => {
+      this.setState(
+        {selectedProduct: response.data[0].id}
+      )
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   getMetaInformation() {
     let product;
     if (!this.state.selectedProduct) {
-      product = 17072;
+      product = 40344;
     } else {
       product = this.state.selectedProduct;
     }
@@ -78,7 +87,7 @@ class App extends React.Component {
       });
   }
 
-  getProduct(productID = 17070) {
+  getProduct(productID = 40344) {
     axios
       .get(`api/products/${productID}`)
       .then((product) => this.setState({ selectedProduct: product.data }))
